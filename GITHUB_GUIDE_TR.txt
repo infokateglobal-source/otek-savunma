@@ -1,0 +1,38 @@
+# GitHub ile otomatik Setup.exe üretme (en basit akış)
+
+Bu repo, GitHub Actions ile Windows üzerinde otomatik olarak:
+- `dist\OtekSavunma\OtekSavunma.exe`
+- `installer_output\OtekSavunma_Setup.exe`
+üretir.
+
+## Çalıştırma mantığı
+Workflow sadece **tag** gönderilince tetiklenir: `v0.1.0` gibi.
+
+## 1) GitHub'da repo oluşturma
+- GitHub hesabınla giriş yap
+- New repository → isim: `otek-savunma`
+- Public/Private fark etmez
+- Create repository
+
+## 2) Dosyaları yükleme (web ile)
+Repo sayfanda: **Add file → Upload files**
+Bu klasördeki her şeyi sürükle-bırak → Commit.
+
+## 3) Release/Tag oluşturma (web ile)
+Repo → **Releases** → **Draft a new release**
+- Tag: `v0.1.0` (yaz, sonra “Create new tag…”)
+- Title: `Otek Savunma 0.1.0`
+- Publish release
+
+Bu işlem tag'i oluşturur ve Actions build başlar.
+
+## 4) Çıktıları indirme
+Repo → **Actions** → en üstteki çalışmaya gir
+- Artifacts bölümünden: `OtekSavunma_Windows` indir
+İçinde:
+- `installer_output\OtekSavunma_Setup.exe`
+
+## Not
+Eğer workflow çalışmazsa, genelde sebep:
+- Tag formatı `v` ile başlamadı (örn: `0.1.0` değil `v0.1.0` olmalı)
+- Actions kapalı (Settings → Actions)

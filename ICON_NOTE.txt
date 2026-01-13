@@ -1,0 +1,2 @@
+Icon entegrasyonu: PyInstaller komutuna --icon=otek.ico ekleyebilirsin.
+ICO dosyasini (256x256 dahil) export edip proje klasorune koy.
