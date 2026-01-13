@@ -17,7 +17,7 @@ SolidCompression=yes
 PrivilegesRequired=lowest
 
 [Files]
-Source: "dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\OtekSavunma\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\Otek Savunma"; Filename: "{app}\{#MyAppExeName}"
